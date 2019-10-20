@@ -229,10 +229,9 @@ public enum UpgradeType {
      * Returns the mineral price for the upgrade.
      *
      * @param level The next upgrade level.
-     *
-     * Upgrades start at level 0.
-     *
-     * @return The mineral cost of the upgrade for the given \p level.
+     *              <p>
+     *              Upgrades start at level 0.
+     * @return The mineral cost of the upgrade for the given level.
      */
     public int mineralPrice(final int level) {
         return defaultOreCostBase[id] + Math.max(0, level - 1) * mineralPriceFactor();
@@ -255,10 +254,9 @@ public enum UpgradeType {
      * Returns the vespene gas price for the first upgrade.
      *
      * @param level The next upgrade level.
-     *
-     * Upgrades start at level 0.
-     *
-     * @return The gas cost of the upgrade for the given \p level.
+     *              <p>
+     *              Upgrades start at level 0.
+     * @return The gas cost of the upgrade for the given level.
      */
     public int gasPrice(final int level) {
         return mineralPrice(level);
@@ -280,11 +278,8 @@ public enum UpgradeType {
     /**
      * Returns the number of frames needed to research the first upgrade.
      *
-     * @param level The next upgrade level.
-     *
-     * Upgrades start at level 0.
-     *
-     * @return The time cost of the upgrade for the given \p level.
+     * @param level The next upgrade level. Upgrades start at level 0.
+     * @return The time cost of the upgrade for the given level.
      */
     public int upgradeTime(final int level) {
         return defaultTimeCostBase[id] + Math.max(0, level - 1) * upgradeTimeFactor();
@@ -334,10 +329,7 @@ public enum UpgradeType {
      * Returns the type of unit that is required for the upgrade. The player
      * must have at least one of these units completed in order to start upgrading this upgrade.
      *
-     * @param level The next upgrade level.
-     *
-     * Upgrades start at level 0.
-     *
+     * @param level The next upgrade level. Upgrades start at level 0.
      * @return {@link UnitType} required to obtain this upgrade.
      */
     public UnitType whatsRequired(final int level) {
