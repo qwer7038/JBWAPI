@@ -103,7 +103,11 @@ public class Game {
 
     Game(Client client) {
         this.client = client;
-        this.gameData = client.data();
+        this.gameData = client.gameData();
+    }
+
+    Client getClient() {
+        return client;
     }
 
     private static boolean hasPower(final int x, final int y, final UnitType unitType, final List<Unit> pylons) {
@@ -260,7 +264,7 @@ public class Game {
         observers = playerSet.stream().filter(p -> !p.equals(self) && p.isObserver())
                 .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
 
-        latcom = gameData.getHasLatCom();
+        setLatCom(true);
     }
 
     void unitCreate(final int id) {
